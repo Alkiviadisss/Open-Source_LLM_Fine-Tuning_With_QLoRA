@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+data/
+datasets/
+
+*.safetensors
+*.bin
+*.pth
+*.pt
+checkpoints/
+results/qlora_adapter/
+results/checkpoints/
+
+.cache/
+huggingface_cache/
+
+.env
+.env.*
+!.env.example
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
