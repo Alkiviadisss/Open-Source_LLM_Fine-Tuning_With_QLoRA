@@ -1,0 +1,26 @@
+{
+  "base_model": {
+    "num_examples": 20,
+    "exact_match_correct": 0,
+    "normalized_exact_match_accuracy": 0.0,
+    "numeric_examples": 19,
+    "numeric_correct": 4,
+    "numeric_answer_accuracy": 0.21052631578947367
+  },
+  "qlora_model": {
+    "num_examples": 20,
+    "exact_match_correct": 9,
+    "normalized_exact_match_accuracy": 0.45,
+    "numeric_examples": 19,
+    "numeric_correct": 9,
+    "numeric_answer_accuracy": 0.47368421052631576
+  },
+  "comparison": {
+    "evaluation_type": "preliminary",
+    "sample_size": 20,
+    "random_seed": 42,
+    "normalized_exact_match_accuracy_change": 0.45,
+    "numeric_answer_accuracy_change": 0.2631578947368421,
+    "note": "Preliminary evaluation on 20 randomly sampled test examples; numeric accuracy was calculated on 19 examples identified as numeric by the evaluation script. Not representative of full test-set performance."
+  }
+}
