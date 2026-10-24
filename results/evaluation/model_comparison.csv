@@ -1,0 +1,3 @@
+model,num_examples,exact_match_correct,normalized_exact_match_accuracy,numeric_examples,numeric_correct,numeric_answer_accuracy
+Base Qwen3-4B,20,0,0.0,19,4,0.21052631578947367
+QLoRA fine-tuned Qwen3-4B,20,9,0.45,19,9,0.47368421052631576
