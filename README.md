@@ -2,7 +2,6 @@
 
 ```
 # Open-Source LLM Fine-Tuning with QLoRA 
-```
 
 ### `> fine-tuning a 4B language model to reason over financial reports`
 
