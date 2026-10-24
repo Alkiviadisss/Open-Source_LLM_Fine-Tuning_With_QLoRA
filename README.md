@@ -38,12 +38,12 @@ This project adapts **Qwen3-4B** to that task using **QLoRA**: the base model is
 
 ```mermaid
 flowchart LR
-    A["🗂️ bevaya/FinQA<br/>train · val · test"] --> B["_01_Preprocess.py<br/>clean + chat format"]
+    A["bevaya/FinQA<br/>train · val · test"] --> B["_01_Preprocess.py<br/>clean + chat format"]
     B --> C["_02_Model.py<br/>4-bit NF4 + LoRA"]
     C --> D["_03_Train.py<br/>TRL SFTTrainer"]
     D --> E["results/qlora_adapter"]
     E --> F["_04_Evaluate.py<br/>base vs QLoRA"]
-    F --> G["📊 metrics.json<br/>model_comparison.csv"]
+    F --> G["metrics.json<br/>model_comparison.csv"]
 
     style A fill:#0A0F24,stroke:#00E5FF,color:#00E5FF
     style B fill:#0A0F24,stroke:#00E5FF,color:#00E5FF
@@ -147,7 +147,7 @@ qlora  █████████░░░░░░░░░░░  45.0%
 - A recent version of TRL (the config uses `completion_only_loss`, `max_length`, and `eos_token` in `SFTConfig`)
 
 ```bash
-pip install torch transformers peft trl bitsandbytes accelerate datasets pandas numpy scikit-learn tqdm
+pip install requirements.txt  # download requirements for project
 ```
 
 ### Run
@@ -170,18 +170,19 @@ To evaluate on a subset, set `MAX_SAMPLES` at the top of `_04_Evaluate.py` (it s
 ├── _02_Model.py               # 4-bit quantized model + LoRA config
 ├── _03_Train.py               # SFT training loop
 ├── _04_Evaluate.py            # base vs adapter evaluation
-├── training_metrics.json      # final train / validation metrics
-├── metrics.json               # base vs QLoRA evaluation summary
-├── model_comparison.csv       # side-by-side results table
+├── requirements.txt           # download requirements for project
 ├── data/processed/            # generated: train / validation / test
-└── results/
-    ├── qlora_adapter/         # generated: trained LoRA adapter + checkpoints
-    └── evaluation/            # generated: predictions + comparison files
+├── results/                   # generated: predictions + comparison files
+    └── evaluation/
+        ├── metrics.json       
+        └── model_comparison.csv
+    └── training/
+        └── training_metrics.json            
 ```
 
 ---
 
-## `// 07` Limitations and Next Steps
+## `// 07` Limitations
 
 **Known limitations**
 
@@ -189,14 +190,6 @@ To evaluate on a subset, set `MAX_SAMPLES` at the top of `_04_Evaluate.py` (it s
 - The model answers directly, with Qwen3's thinking mode disabled, so multi-step arithmetic is done "in its head". This is a likely ceiling on accuracy for harder FinQA questions.
 - Answer extraction takes the last number or last line, which can mis-score verbose outputs.
 - The numeric tolerance (`1e-3` relative) is lenient for very large or very small values.
-
-**Planned improvements**
-
-- [ ] Run the full test-set evaluation and report confidence intervals
-- [ ] Compare against a thinking-enabled and a few-shot baseline
-- [ ] Train on step-by-step reasoning programs rather than final answers alone
-- [ ] Ablate LoRA rank and learning rate
-
 ---
 
 ## `// 08` Acknowledgements
@@ -208,10 +201,12 @@ To evaluate on a subset, set `MAX_SAMPLES` at the top of `_04_Evaluate.py` (it s
 
 ---
 
-<div align="center">
+## Author
 
-**Built by Alkiviadis Agrogiannhs**
+**Alkiviadis Agrogiannhs**  
+Data Scientist & Machine Learning Engineer 
+[LinkedIn](https://www.linkedin.com/in/alkiviadis-agrogiannhs/)
+[Email](mailto:alkiviadisagrogiannhs@gmail.com)
+[GitHub](https://github.com/alkiviadisss)
 
-`> data science · machine learning · applied AI`
-
-</div>
+---
