@@ -3,15 +3,6 @@
 
 ### `> fine-tuning a 4B language model to reason over financial reports`
 
-![Model](https://img.shields.io/badge/Model-Qwen3--4B-00E5FF?style=for-the-badge&labelColor=0A0F24)
-![Method](https://img.shields.io/badge/Method-QLoRA%204--bit%20NF4-FFB000?style=for-the-badge&labelColor=0A0F24)
-![Dataset](https://img.shields.io/badge/Dataset-FinQA-FF2BD6?style=for-the-badge&labelColor=0A0F24)
-
-![Python](https://img.shields.io/badge/Python-3.10+-00E5FF?style=flat-square&labelColor=0A0F24&logo=python&logoColor=00E5FF)
-![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-FFB000?style=flat-square&labelColor=0A0F24&logo=pytorch&logoColor=FFB000)
-![HF](https://img.shields.io/badge/🤗%20Transformers%20·%20PEFT%20·%20TRL-FF2BD6?style=flat-square&labelColor=0A0F24)
-![Status](https://img.shields.io/badge/Eval-Preliminary%20(n%3D20)-00E5FF?style=flat-square&labelColor=0A0F24)
-
 </div>
 
 ---
